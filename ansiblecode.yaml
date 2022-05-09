@@ -5,23 +5,18 @@
 #
 
 ---
-
-
+- name: This very first one
 ...
 
 # command:
 # ansible-playbook ansiblecode.yaml -u ashu -k
 #
-# If yaml file not available: Output
+# Output:
 # student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
-# ERROR! the playbook: ansiblecode.yaml could not be found
-# student@linux1  $
-#
-# If yaml is available with empty play: Output
-#student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
 # SSH password: 
-# ERROR! Empty playbook, nothing to do
+# ERROR! the field 'hosts' is required but was not set
 # student@linux1  $
 #
+
 
 
