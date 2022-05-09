@@ -1,0 +1,27 @@
+#
+# 1.0 Very basic play: Empty play
+# Note: "#" this is use for comment 
+# shortcut to comment in & out "Ctrl+/"
+#
+
+---
+
+
+...
+
+# command:
+# ansible-playbook ansiblecode.yaml -u ashu -k
+#
+# If yaml file not available: Output
+# student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
+# ERROR! the playbook: ansiblecode.yaml could not be found
+# student@linux1  $
+#
+# If yaml is available with empty play: Output
+#student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
+# SSH password: 
+# ERROR! Empty playbook, nothing to do
+# student@linux1  $
+#
+
+
