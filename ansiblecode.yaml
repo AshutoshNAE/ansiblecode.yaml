@@ -16,7 +16,7 @@
       register: arpOut
 
     - name: Print & Debug the output
-      debug: var=arpOut
+      debug: var=arpOut.stdout_lines
 ...
 
 # command:
