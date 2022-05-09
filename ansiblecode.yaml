@@ -1,11 +1,14 @@
 #
-# 1.0 Very basic play: Empty play
+# 1.0 Very basic play: PLAY & PLAY RECAP
 # Note: "#" this is use for comment 
 # shortcut to comment in & out "Ctrl+/"
 #
 
 ---
 - name: This very first one
+  hosts: Hosts Routers
+  gather_facts: false
+
 ...
 
 # command:
@@ -14,9 +17,10 @@
 # Output:
 # student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
 # SSH password: 
-# ERROR! the field 'hosts' is required but was not set
+#
+# PLAY [This very first one] *****************************************************
+#
+# PLAY RECAP *********************************************************************
+#
 # student@linux1  $
 #
-
-
-
