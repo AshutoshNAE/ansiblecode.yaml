@@ -6,21 +6,22 @@
 
 ---
 - name: This very first one
-  hosts: Hosts Routers
+  hosts: Routers
   gather_facts: false
 
+  tasks:
+    - name: Get basic command ARP using raw modules
+      raw: show ip arp
+
+      register: arpOut
+
+    - name: Print & Debug the output
+      debug: var=arpOut
 ...
 
 # command:
 # ansible-playbook ansiblecode.yaml -u ashu -k
 #
 # Output:
-# student@linux1  $ansible-playbook ansiblecode.yaml -u ashu -k
-# SSH password: 
-#
-# PLAY [This very first one] *****************************************************
-#
-# PLAY RECAP *********************************************************************
-#
-# student@linux1  $
+# Its print all default output 1) stderr 2)stderr_lines 3)stdout 4)stdout_lines
 #
