@@ -1,27 +1,26 @@
 #
-# 1.0 Very basic play: PLAY & PLAY RECAP
-# Note: "#" this is use for comment 
-# shortcut to comment in & out "Ctrl+/"
-#
+#Q) What is connection local in Ansible?
+#Ans) It is to execute the tasks locally on the same host (i.e., the controller) where the playbook is run.
+# From the documentation, It may be useful to use a playbook locally, rather than by connecting over SSH
 
 ---
-- name: This very first one
+- name: Running with multiple command for Cisco
   hosts: Routers
   gather_facts: false
+  connection: local
 
   tasks:
-    - name: Get basic command ARP using raw modules
-      raw: show ip arp
+    - name: Lets check out with show ver & show arp
+      ios_command:
+        commands:
+          - show arp
+          - show version
 
-      register: arpOut
+      register: commandOut
 
-    - name: Print & Debug the output
-      debug: var=arpOut.stdout_lines
+    -   debug: var=commandOut.stdout_lines
 ...
 
-# command:
-# ansible-playbook ansiblecode.yaml -u ashu -k
-#
 # Output:
-# Its print all default output 1) stderr 2)stderr_lines 3)stdout 4)stdout_lines
+# 
 #
