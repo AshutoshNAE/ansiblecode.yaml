@@ -1,13 +1,17 @@
 #
-#Q) What is connection local in Ansible?
-#Ans) It is to execute the tasks locally on the same host (i.e., the controller) where the playbook is run.
-# From the documentation, It may be useful to use a playbook locally, rather than by connecting over SSH
+# Q) What is Network_cli?
+# Ans) Synopsis. This connection plugin provides a connection to remote devices over the SSH and implements a CLI shell.
+# This connection plugin is typically used by network devices for sending and receiving CLi commands to network devices.
+# https://docs.ansible.com/ansible/latest/network/getting_started/network_differences.html
+# what is Persistent?
+# __determined to continue doing something even though people say that you are wrong or that you cannot do it
+# __lasting for a long time or happening often
 
 ---
 - name: Running with multiple command for Cisco
   hosts: Routers
   gather_facts: false
-  connection: local
+  connection: network_cli
 
   tasks:
     - name: Lets check out with show ver & show arp
