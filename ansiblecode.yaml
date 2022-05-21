@@ -1,10 +1,8 @@
 ###
-# 4.0 Saving output to a file !!!
-#Q) What is Ansible Jinja2 template?
-#Ans) Jinja2 templates are simple template files that store variables that can change from time to time.
-# When Playbooks are executed, these variables get replaced by actual values defined in Ansible Playbooks.
-# This way, templating offers an efficient and flexible solution to create or alter configuration file with ease.
-#Lets code
+##
+# 4.1 Saving Output to a folder for multiple command !!!
+# Understand ARRAY concept "[0], [1], [2], [0][1]" & nullify the []
+
 ---
 - name: Pre & Post Preparartion to the folder
   hosts: l2sw
@@ -23,10 +21,10 @@
 
     - name: Save pre capture output into a folder
       copy:
-        content: "{{commandOut.stdout[0]}}"
+        content: "{{commandOut.stdout[1]}}"
         dest: "~/Backup/{{inventory_hostname}}.txt"
 ...
 
-##
-#Output:
+
+
 #
